@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Contact PrintPixel — Inquiries & Partnerships"
+  description="Get in touch with the PrintPixel team for questions, feedback, bug reports, or print-shop partnerships."
+>
+  <div class="page-header">
+    <p class="eyebrow">Direct Communication</p>
+    <h1>Contact PrintPixel</h1>
+    <p class="sub">Have feedback, discovered a bug with an image format, or want to integrate PrintPixel for your print shop?</p>
+  </div>
+
+  <div class="prose">
+    <h2>Get in Touch</h2>
+    <p>
+      We welcome inquiries from photographers, digital artists, Etsy creators, and commercial print shops. Send us a message and we'll reply promptly.
+    </p>
+
+    <form class="contact-form" action="mailto:contact@printpixel.app" method="POST" enctype="text/plain">
+      <div class="form-group">
+        <label class="form-label" for="name">Your Name</label>
+        <input class="form-input" type="text" id="name" name="name" placeholder="Alex Morgan" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Your Email Address</label>
+        <input class="form-input" type="email" id="email" name="email" placeholder="alex@example.com" required />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="subject">Inquiry Type</label>
+        <select class="form-input" id="subject" name="subject">
+          <option value="General Question">General Question</option>
+          <option value="Bug Report / Format Support">Bug Report / Image Format Issue</option>
+          <option value="Print Shop Partnership">Print Shop Partnership / Guidelines Integration</option>
+          <option value="Feature Suggestion">Feature Suggestion</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+
+    <hr />
+
+    <h2>Direct Email</h2>
+    <p>
+      Prefer writing directly from your email client? Write to us at:
+    </p>
+    <p>
+      <code>contact@printpixel.app</code>
+    </p>
+    <p>
+      For privacy inquiries or legal concerns, refer to our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a>.
+    </p>
+  </div>
+</BaseLayout>

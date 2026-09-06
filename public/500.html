@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>500 — Server Error | PrintPixel</title>
+  <meta name="description" content="An unexpected error occurred. Return to the PrintPixel analyzer.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23C2205B' stroke-width='2.5'/%3E%3Cpath d='M16 1v8M16 23v8M1 16h8M23 16h8' stroke='%23C2205B' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23C2205B'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F3F4F1; --surface: #FFFFFF; --ink: #171A1F; --ink2: #3C434D;
+      --mut: #68717E; --line: #E3E5E0; --accent: #C2205B; --accent-hover: #A61B4E;
+      --disp: 'Bricolage Grotesque', sans-serif; --body: 'IBM Plex Sans', sans-serif; --mono: 'IBM Plex Mono', monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0D1014; --surface: #151A20; --ink: #E9EBEF; --ink2: #C6CBD3;
+        --mut: #9AA4B2; --line: #272E38; --accent: #F2568F; --accent-hover: #FF74A5;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--body); background: var(--bg); color: var(--ink);
+      min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      padding: 24px; text-align: center;
+    }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+      padding: 44px 36px; max-width: 480px; width: 100%; box-shadow: 0 10px 28px -14px rgba(20,22,26,.14);
+    }
+    .badge {
+      font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 12px;
+    }
+    h1 {
+      font-family: var(--disp); font-weight: 800; font-size: 64px;
+      line-height: 1; letter-spacing: -.03em; color: var(--accent); margin-bottom: 10px;
+    }
+    h2 {
+      font-family: var(--disp); font-weight: 700; font-size: 20px;
+      margin-bottom: 12px;
+    }
+    p { color: var(--mut); font-size: 14.5px; line-height: 1.55; margin-bottom: 24px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; background: var(--accent);
+      color: #fff; font-weight: 600; font-size: 14px; padding: 11px 22px;
+      border-radius: 9px; text-decoration: none; transition: background .15s, transform .15s;
+    }
+    .btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">Error 500</div>
+    <h1>500</h1>
+    <h2>Unexpected Server Error</h2>
+    <p>Something went wrong processing this request. PrintPixel runs client-side, so you can reload safely.</p>
+    <a class="btn" href="/">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Return to Analyzer
+    </a>
+  </div>
+</body>
+</html>

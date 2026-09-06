@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="About PrintPixel — Free In-Browser DPI & Print Resolution Analyzer"
+  description="Learn why PrintPixel was built: a private, zero-upload tool to analyze image DPI and calculate physical print sizes without privacy compromises."
+>
+  <div class="page-header">
+    <p class="eyebrow">Mission & Architecture</p>
+    <h1>About PrintPixel</h1>
+    <p class="sub">A fast, zero-upload tool designed to give photographers, designers, and everyday users instant clarity on print resolution.</p>
+  </div>
+
+  <div class="prose">
+    <h2>Why PrintPixel Was Built</h2>
+    <p>
+      Almost everyone who prepares an image for printing—whether an art print, family photo, or poster—encounters resolution anxiety. Existing online "DPI checkers" almost universally demand that you upload your full-resolution, private photos to remote cloud servers.
+    </p>
+    <p>
+      We built <strong>PrintPixel</strong> to eliminate that friction and privacy compromise. PrintPixel runs 100% locally inside your browser, turning your device into an instant optical resolution workbench.
+    </p>
+
+    <hr />
+
+    <h2>How It Works (Zero Server Uploads)</h2>
+    <p>
+      When you drop or select an image in PrintPixel, your browser reads the file directly using client-side JavaScript APIs (<code>FileReader</code> and <code>HTMLCanvasElement</code>). 
+    </p>
+    <p>
+      The analyzer scans the raw binary headers of JPEG (JFIF and EXIF APP1 segments) and PNG (pHYs chunks) to detect embedded DPI hints, reads natural pixel dimensions, and computes physical print limits instantly. <strong>No file data is ever transmitted across the network or stored on any server.</strong>
+    </p>
+
+    <hr />
+
+    <h2>The Core Optical Math</h2>
+    <p>
+      Resolution is governed by a fundamental physical formula:
+    </p>
+    <blockquote>
+      <strong>Print Dimension (Inches) = Pixel Dimension ÷ DPI Target</strong>
+    </blockquote>
+    <p>
+      DPI (dots per inch) is simply a packing density ruler that determines how closely pixels sit on paper:
+    </p>
+    <ul>
+      <li><strong>300 DPI (Photo Quality)</strong>: Essential for items held in the hand (fine-art prints, photo books, flyers) viewed at 10–12 inches.</li>
+      <li><strong>150 DPI (Poster / Wall Display)</strong>: Ideal for framed prints, canvas, and posters viewed comfortably at arm's length (2–3 feet).</li>
+      <li><strong>72 DPI (Draft / Large Format)</strong>: Suitable for banners, signage, and billboards viewed from meters away.</li>
+    </ul>
+
+    <hr />
+
+    <h2>Built for Speed & Longevity</h2>
+    <p>
+      PrintPixel is crafted with <a href="https://astro.build/" target="_blank" rel="noopener">Astro</a> and deployed to Cloudflare Pages edge infrastructure for sub-100ms load times, zero cumulative layout shift (CLS), and pristine Core Web Vitals.
+    </p>
+    <p>
+      Have questions or suggestions? Reach out via our <a href="/contact">contact page</a>.
+    </p>
+  </div>
+</BaseLayout>

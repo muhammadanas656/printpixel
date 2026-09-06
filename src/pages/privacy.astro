@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Privacy Policy — PrintPixel (100% Client-Side Processing)"
+  description="PrintPixel Privacy Policy: Your images are processed entirely in your browser. No uploads, no server storage, no tracking."
+>
+  <div class="page-header">
+    <p class="eyebrow">Zero-Upload Privacy Policy</p>
+    <h1>Privacy Policy</h1>
+    <p class="sub">Last updated: September 2026. PrintPixel is built on a strict privacy-first foundation: your images never leave your computer or phone.</p>
+  </div>
+
+  <div class="prose">
+    <h2>1. We Do Not Collect or Upload Your Images</h2>
+    <p>
+      PrintPixel processes all image files <strong>entirely within your web browser</strong> using client-side JavaScript APIs (<code>FileReader.readAsArrayBuffer()</code> and <code>HTMLImageElement</code>). 
+    </p>
+    <p>
+      At no point during file selection, drag-and-drop, metadata extraction, or print size calculation is any image data transmitted across the network, uploaded to a remote server, or stored in any database. When you close or refresh your browser tab, all ephemeral memory references are immediately cleared by your operating system.
+    </p>
+
+    <hr />
+
+    <h2>2. Technical Operation & Data We Access</h2>
+    <ul>
+      <li><strong>Client-Side Processing</strong>: The application reads the pixel dimensions and headers (EXIF, JFIF, or pHYs metadata) locally in your device's memory to report embedded DPI tags.</li>
+      <li><strong>No Network File Transfers</strong>: You can disconnect your internet connection after loading the page and the tool will continue to analyze images locally.</li>
+      <li><strong>No File Telemetry</strong>: We do not log, inspect, or track filenames, file sizes, or image contents.</li>
+    </ul>
+
+    <hr />
+
+    <h2>3. Local Storage Usage</h2>
+    <p>
+      PrintPixel uses browser <code>localStorage</code> for exactly two client-side convenience settings:
+    </p>
+    <ol>
+      <li><code>ppi-theme</code>: Remembers your preferred color theme (<code>light</code> or <code>dark</code>).</li>
+      <li><code>ppi-prefs</code>: Remembers your selected measurement units (<code>in</code> vs <code>cm</code>) and quality target (<code>300</code>, <code>150</code>, or <code>72</code> DPI).</li>
+    </ol>
+    <p>
+      This data resides solely on your physical device and is never synchronized or sent to any remote server.
+    </p>
+
+    <hr />
+
+    <h2>4. Cookies & Analytics</h2>
+    <p>
+      PrintPixel does not use tracking cookies, session identifiers, or invasive third-party fingerprinting scripts. We do not sell, rent, or trade any personal information.
+    </p>
+
+    <hr />
+
+    <h2>5. Third-Party Infrastructure</h2>
+    <ul>
+      <li><strong>Hosting Edge</strong>: Static files (HTML, CSS, JS) are distributed via Cloudflare Pages edge network for security, caching, and DDoS mitigation. Cloudflare may log standard HTTP request metadata (IP address, user agent) as part of standard web server operations.</li>
+      <li><strong>Web Fonts</strong>: Clean typography is served via Google Fonts CDN.</li>
+    </ul>
+
+    <hr />
+
+    <h2>6. GDPR, UK DPA & CCPA Rights</h2>
+    <p>
+      Because PrintPixel does not collect, store, or transmit personal data or uploaded media, there is no personal data profile retained on our servers. You may clear your local preferences at any time by clearing your browser cache and cookies.
+    </p>
+
+    <hr />
+
+    <h2>7. Contacting Us</h2>
+    <p>
+      If you have questions about this Privacy Policy or our architectural commitments, please contact us at:
+    </p>
+    <p>
+      <code>privacy@printpixel.app</code> or visit our <a href="/contact">contact page</a>.
+    </p>
+  </div>
+</BaseLayout>

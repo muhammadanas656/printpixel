@@ -8,6 +8,7 @@ interface Props {
 const { lang = 'en' } = Astro.props;
 const t = I18N[lang] || I18N.en;
 const canonicalUrl = lang === 'en' ? 'https://printpixel.app/' : `https://printpixel.app/${lang}/`;
+const homePath = lang === 'en' ? '/' : `/${lang}/`;
 ---
 <!DOCTYPE html>
 <html lang={lang} data-theme="light">
@@ -520,7 +521,7 @@ footer p{font-size:12.5px;color:var(--mut);max-width:52ch}
 
 <header class="site-head" id="siteHead">
   <div class="wrap">
-    <a class="brand" href={canonicalUrl} aria-label="PrintPixel home">
+    <a class="brand" href={homePath} aria-label="PrintPixel home">
       <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <circle cx="16" cy="16" r="9" stroke="var(--accent)" stroke-width="2.5"/>
         <path d="M16 1v8M16 23v8M1 16h8M23 16h8" stroke="var(--accent)" stroke-width="2.5"/>
@@ -1012,6 +1013,18 @@ onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
 
 $('#themeBtn').onclick=()=>{ const n=document.documentElement.dataset.theme==='dark'?'light':'dark';
   document.documentElement.dataset.theme=n; try{ localStorage.setItem('ppi-theme',n); }catch(e){} };
+
+/* ---------- brand scroll-to-top ---------- */
+const brandLink = $('.brand');
+if (brandLink) {
+  brandLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname);
+    }
+  });
+}
 
 /* ---------- init ---------- */
 $('#unitIn').classList.toggle('sel',state.plan.unit==='in');

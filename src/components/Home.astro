@@ -122,11 +122,17 @@ button{font-family:inherit;cursor:pointer}
 .brand-name em{font-style:normal;color:var(--mut);font-family:var(--body);font-weight:500;font-size:13px}
 .head-nav{display:flex;gap:20px;margin-left:auto}
 .head-nav a{font-size:13px;font-weight:500;color:var(--mut);text-decoration:none;transition:color .15s}
-.head-nav a:hover{color:var(--ink)}
-.lang{display:flex;gap:4px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;align-items:center}
-.lang a{color:var(--mut);text-decoration:none;padding:4px 6px;border-radius:6px;transition:all .15s;min-height:28px;display:inline-flex;align-items:center}
-.lang a:hover{color:var(--ink);background:var(--surface2)}
-.lang a.cur{color:var(--accent);font-weight:600;background:var(--accent-soft)}
+.head-controls{display:flex;align-items:center;gap:14px;margin-left:auto}
+.head-div{width:1px;height:18px;background:var(--line2);opacity:.7}
+
+.lang{display:flex;align-items:baseline;gap:2px}
+.lang a{position:relative;font-family:var(--mono);font-size:10.5px;font-weight:500;
+  letter-spacing:.1em;color:var(--mut);text-decoration:none;padding:6px 5px;transition:color .15s}
+.lang a:hover{color:var(--ink)}
+.lang a::after{content:"";position:absolute;left:5px;right:5px;bottom:2px;height:2px;
+  background:var(--accent);transform:scaleX(0);transition:transform .2s}
+.lang a.cur{color:var(--accent)}
+.lang a.cur::after{transform:scaleX(1)}
 @media(max-width:768px){.head-nav{display:none}}
 .icon-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);
   background:var(--surface);border-radius:10px;color:var(--ink2);transition:border-color .15s,transform .15s}
@@ -409,8 +415,8 @@ footer p{font-size:12.5px;color:var(--mut);max-width:52ch}
 @media(max-width:640px){
   .wrap{padding:0 16px}
   .site-head .wrap{height:52px}
-  .lang{gap:2px;font-size:10.5px}
-  .lang a{padding:3px 5px;min-height:24px}
+  .lang a{padding:10px 6px}          /* taller touch target */
+  .head-controls{gap:10px}
   .brand-name em{display:none}                 /* kills 320px overflow */
   .brand-name{font-size:15px}
 
@@ -521,16 +527,19 @@ footer p{font-size:12.5px;color:var(--mut);max-width:52ch}
     <nav class="head-nav" aria-label="Page sections">
       <a href="#reference">{t.navRef}</a><a href="#learn">{t.navFaq}</a>
     </nav>
-    <nav class="lang" aria-label="Language">
-      <a href="/" lang="en" class={lang === 'en' ? 'cur' : ''}>EN</a>
-      <a href="/pt/" lang="pt" class={lang === 'pt' ? 'cur' : ''}>PT</a>
-      <a href="/es/" lang="es" class={lang === 'es' ? 'cur' : ''}>ES</a>
-      <a href="/de/" lang="de" class={lang === 'de' ? 'cur' : ''}>DE</a>
-    </nav>
-    <button class="icon-btn" id="themeBtn" aria-label="Switch color theme">
-      <svg class="ic-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
-      <svg class="ic-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.6 6.6 0 0 0 21 12.8z"/></svg>
-    </button>
+    <div class="head-controls">
+      <nav class="lang" aria-label="Language">
+        <a href="/" lang="en" class={lang === 'en' ? 'cur' : ''} aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+        <a href="/pt/" lang="pt" class={lang === 'pt' ? 'cur' : ''} aria-current={lang === 'pt' ? 'page' : undefined}>PT</a>
+        <a href="/es/" lang="es" class={lang === 'es' ? 'cur' : ''} aria-current={lang === 'es' ? 'page' : undefined}>ES</a>
+        <a href="/de/" lang="de" class={lang === 'de' ? 'cur' : ''} aria-current={lang === 'de' ? 'page' : undefined}>DE</a>
+      </nav>
+      <span class="head-div" aria-hidden="true"></span>
+      <button class="icon-btn" id="themeBtn" aria-label="Switch color theme">
+        <svg class="ic-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></svg>
+        <svg class="ic-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3 6.6 6.6 0 0 0 21 12.8z"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 

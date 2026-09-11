@@ -10,5 +10,6 @@ dist/
 
 # Environment & OS files
 .env*
+!.env.example
 .DS_Store
 Thumbs.db

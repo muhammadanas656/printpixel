@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL || '';
+const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY || '';
 ---
 
 <BaseLayout 
@@ -15,18 +18,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="prose">
     <h2>Get in Touch</h2>
     <p>
-      We welcome inquiries from photographers, digital artists, Etsy creators, and commercial print shops. Send us a message and we'll reply promptly.
+      We welcome inquiries from photographers, digital artists, Etsy creators, and commercial print shops. Send us a message directly through the form below and we'll reply promptly.
     </p>
 
-    <form class="contact-form" action="mailto:contact@printpixel.app" method="POST" enctype="text/plain">
+    <div id="formAlert" class="form-alert" style="display:none" role="alert"></div>
+
+    <form class="contact-form" id="contactForm" novalidate>
       <div class="form-group">
         <label class="form-label" for="name">Your Name</label>
-        <input class="form-input" type="text" id="name" name="name" placeholder="Alex Morgan" required />
+        <input class="form-input" type="text" id="name" name="name" placeholder="Alex Morgan" required autocomplete="name" />
       </div>
 
       <div class="form-group">
         <label class="form-label" for="email">Your Email Address</label>
-        <input class="form-input" type="email" id="email" name="email" placeholder="alex@example.com" required />
+        <input class="form-input" type="email" id="email" name="email" placeholder="alex@example.com" required autocomplete="email" />
       </div>
 
       <div class="form-group">
@@ -44,20 +49,123 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <textarea class="form-textarea" id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
       </div>
 
-      <button type="submit" class="btn btn-primary">Send Message</button>
+      <button type="submit" class="btn btn-primary" id="submitBtn">
+        <span id="btnText">Send Message</span>
+      </button>
     </form>
 
     <hr />
 
-    <h2>Direct Email</h2>
-    <p>
-      Prefer writing directly from your email client? Write to us at:
-    </p>
-    <p>
-      <code>contact@printpixel.app</code>
-    </p>
-    <p>
-      For privacy inquiries or legal concerns, refer to our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a>.
+    <p style="font-size:14px; color:var(--mut);">
+      All messages are transmitted securely. For privacy inquiries or legal concerns, please refer to our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms of Service</a>.
     </p>
   </div>
 </BaseLayout>
+
+<script is:inline define:vars={{ supabaseUrl, supabaseAnonKey }}>
+(function() {
+  const form = document.getElementById('contactForm');
+  const alertBox = document.getElementById('formAlert');
+  const submitBtn = document.getElementById('submitBtn');
+  const btnText = document.getElementById('btnText');
+
+  if (!form) return;
+
+  function showAlert(message, type) {
+    if (!alertBox) return;
+    alertBox.className = `form-alert form-${type}`;
+    alertBox.innerHTML = message;
+    alertBox.style.display = 'flex';
+    alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function hideAlert() {
+    if (!alertBox) return;
+    alertBox.style.display = 'none';
+    alertBox.innerHTML = '';
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    hideAlert();
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const subject = form.subject.value;
+    const message = form.message.value.trim();
+
+    // Client-side validation
+    if (!name || name.length < 2) {
+      showAlert('Please enter your name (at least 2 characters).', 'error');
+      form.name.focus();
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      showAlert('Please enter a valid email address so we can reply to you.', 'error');
+      form.email.focus();
+      return;
+    }
+
+    if (!message || message.length < 10) {
+      showAlert('Please enter a message with at least 10 characters.', 'error');
+      form.message.focus();
+      return;
+    }
+
+    // Check if Supabase credentials are configured
+    const cleanUrl = (supabaseUrl || '').trim();
+    const cleanKey = (supabaseAnonKey || '').trim();
+
+    if (!cleanUrl || !cleanKey || cleanUrl.includes('your-project-ref') || cleanKey.includes('your-anon-key')) {
+      showAlert(
+        '<strong>Notice:</strong> The contact database service is currently being configured. Please ensure <code>PUBLIC_SUPABASE_URL</code> and <code>PUBLIC_SUPABASE_ANON_KEY</code> are set in your environment variables.',
+        'info'
+      );
+      return;
+    }
+
+    // Prepare sending state
+    submitBtn.disabled = true;
+    const originalBtnText = btnText.textContent;
+    btnText.textContent = 'Sending message...';
+
+    try {
+      const endpoint = `${cleanUrl.replace(/\/+$/, '')}/rest/v1/contact_messages`;
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'apikey': cleanKey,
+          'Authorization': `Bearer ${cleanKey}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          subject: subject,
+          message: message
+        })
+      });
+
+      if (response.ok) {
+        form.reset();
+        showAlert(
+          `<strong>Thank you, ${name}!</strong> Your message has been sent successfully. We will get back to you at <em>${email}</em> promptly.`,
+          'success'
+        );
+      } else {
+        const errData = await response.json().catch(() => null);
+        const errMsg = errData && errData.message ? errData.message : 'Server returned an error status (' + response.status + ').';
+        showAlert(`Unable to send your message: ${errMsg}. Please try again later.`, 'error');
+      }
+    } catch (err) {
+      showAlert('Network error: Could not reach the server. Please check your internet connection and try again.', 'error');
+    } finally {
+      submitBtn.disabled = false;
+      btnText.textContent = originalBtnText;
+    }
+  });
+})();
+</script>

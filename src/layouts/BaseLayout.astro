@@ -112,6 +112,12 @@ h1{font-family:var(--disp);font-weight:800;font-size:clamp(1.9rem,4vw,2.5rem);li
 .btn-primary{background:var(--accent);color:#fff}
 .btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px)}
 .btn:active{transform:scale(.98)}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none!important}
+.form-alert{padding:14px 16px;border-radius:10px;font-size:14px;line-height:1.5;margin-bottom:18px;display:flex;align-items:flex-start;gap:10px}
+.form-alert svg{flex:none;margin-top:2px}
+.form-success{background:var(--ok-soft);color:var(--ok);border:1px solid rgba(21,122,70,.25)}
+.form-error{background:var(--bad-soft);color:var(--bad);border:1px solid var(--bad-line)}
+.form-info{background:var(--accent-soft);color:var(--ink);border:1px solid rgba(194,32,91,.25)}
 
 /* footer */
 footer{border-top:1px solid var(--line);margin-top:70px;padding:32px 0 44px}

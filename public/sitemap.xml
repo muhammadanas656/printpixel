@@ -2,69 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://printpixel.app/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://printpixel.app/" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://printpixel.app/pt/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://printpixel.app/es/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://printpixel.app/de/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://printpixel.app/" />
+    <loc>https://proofpixel.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://proofpixel.app/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://proofpixel.app/pt/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://proofpixel.app/es/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://proofpixel.app/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://proofpixel.app/" />
     <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://printpixel.app/pt/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://printpixel.app/" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://printpixel.app/pt/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://printpixel.app/es/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://printpixel.app/de/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://printpixel.app/" />
+    <loc>https://proofpixel.app/pt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://proofpixel.app/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://proofpixel.app/pt/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://proofpixel.app/es/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://proofpixel.app/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://proofpixel.app/" />
     <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://printpixel.app/es/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://printpixel.app/" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://printpixel.app/pt/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://printpixel.app/es/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://printpixel.app/de/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://printpixel.app/" />
+    <loc>https://proofpixel.app/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://proofpixel.app/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://proofpixel.app/pt/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://proofpixel.app/es/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://proofpixel.app/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://proofpixel.app/" />
     <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://printpixel.app/de/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://printpixel.app/" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://printpixel.app/pt/" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://printpixel.app/es/" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://printpixel.app/de/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://printpixel.app/" />
+    <loc>https://proofpixel.app/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://proofpixel.app/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://proofpixel.app/pt/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://proofpixel.app/es/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://proofpixel.app/de/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://proofpixel.app/" />
     <lastmod>2026-09-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://printpixel.app/about</loc>
+    <loc>https://proofpixel.app/about</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://printpixel.app/contact</loc>
+    <loc>https://proofpixel.app/contact</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://printpixel.app/privacy</loc>
+    <loc>https://proofpixel.app/privacy</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://printpixel.app/terms</loc>
+    <loc>https://proofpixel.app/terms</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

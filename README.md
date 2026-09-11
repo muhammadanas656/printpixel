@@ -1,4 +1,4 @@
-# PrintPixel
+# ProofPixel
 
 A client-side Astro + Tailwind prototype for image DPI analysis and print-size planning.
 

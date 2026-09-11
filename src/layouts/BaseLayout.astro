@@ -4,14 +4,14 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "PrintPixel — Free, private in-browser image DPI and print size analyzer." } = Astro.props;
+const { title, description = "ProofPixel — Free, private in-browser image DPI and print size analyzer." } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{title} — PrintPixel</title>
+<title>{title} — ProofPixel</title>
 <meta name="description" content={description}>
 <meta name="theme-color" content="#F3F4F1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0D1014" media="(prefers-color-scheme: dark)">
@@ -147,13 +147,13 @@ footer p{font-size:13px;color:var(--mut);max-width:48ch;line-height:1.55}
 
 <header class="site-head" id="siteHead">
   <div class="wrap">
-    <a class="brand" href="/" aria-label="PrintPixel home">
+    <a class="brand" href="/" aria-label="ProofPixel home">
       <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <circle cx="16" cy="16" r="9" stroke="var(--accent)" stroke-width="2.5"/>
         <path d="M16 1v8M16 23v8M1 16h8M23 16h8" stroke="var(--accent)" stroke-width="2.5"/>
         <circle cx="16" cy="16" r="3" fill="var(--accent)"/>
       </svg>
-      <span class="brand-name">PrintPixel <em>· DPI &amp; Print Analyzer</em></span>
+      <span class="brand-name">ProofPixel <em>· DPI &amp; Print Analyzer</em></span>
     </a>
     <nav class="head-nav" aria-label="Page sections">
       <a href="/">Analyzer</a>
@@ -178,7 +178,7 @@ footer p{font-size:13px;color:var(--mut);max-width:48ch;line-height:1.55}
     <div>
       <div class="f-brand">
         <svg width="17" height="17" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="9" stroke="var(--accent)" stroke-width="2.5"/><path d="M16 1v8M16 23v8M1 16h8M23 16h8" stroke="var(--accent)" stroke-width="2.5"/><circle cx="16" cy="16" r="3" fill="var(--accent)"/></svg>
-        PrintPixel
+        ProofPixel
         <span class="cmyk" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
       </div>
       <p style="margin-top:9px">Your image is analyzed directly in your browser. No uploads, no accounts, no tracking of your files.</p>

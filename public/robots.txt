@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://printpixel.app/sitemap.xml
+Sitemap: https://proofpixel.app/sitemap.xml

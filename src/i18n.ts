@@ -51,7 +51,7 @@ export interface TranslationStrings {
 
 export const I18N: Record<Locale, TranslationStrings> = {
 en: {
-  title: "PrintPixel — Image DPI & Print Size Analyzer",
+  title: "ProofPixel — Image DPI & Print Size Analyzer",
   metaDesc: "Free, private, browser-based tool: see an image's true pixel size, its DPI metadata, and how large you can realistically print it.",
   pill: "Runs locally — nothing is uploaded",
   eyebrow: "Free · Private · In-browser",
@@ -119,7 +119,7 @@ en: {
 },
 
 pt: {
-  title: "PrintPixel — Verificador de DPI e tamanho de impressão",
+  title: "ProofPixel — Verificador de DPI e tamanho de impressão",
   metaDesc: "Ferramenta gratuita e privada no navegador: veja o tamanho real em pixels, os metadados de DPI e até que tamanho você pode imprimir.",
   pill: "Roda localmente — nada é enviado",
   eyebrow: "Gratuito · Privado · No navegador",
@@ -187,7 +187,7 @@ pt: {
 },
 
 es: {
-  title: "PrintPixel — Verificador de DPI y tamaño de impresión",
+  title: "ProofPixel — Verificador de DPI y tamaño de impresión",
   metaDesc: "Herramienta gratuita y privada en el navegador: mira el tamaño real en píxeles, los metadatos de DPI y hasta qué tamaño puedes imprimir.",
   pill: "Se ejecuta localmente — nada se sube",
   eyebrow: "Gratis · Privado · En el navegador",
@@ -255,7 +255,7 @@ es: {
 },
 
 de: {
-  title: "PrintPixel — DPI- und Druckgrößen-Analyzer",
+  title: "ProofPixel — DPI- und Druckgrößen-Analyzer",
   metaDesc: "Kostenloses, privates Browser-Tool: echte Pixelgröße, DPI-Metadaten und realistische Druckgrößen sofort sehen.",
   pill: "Läuft lokal — nichts wird hochgeladen",
   eyebrow: "Kostenlos · Privat · Im Browser",

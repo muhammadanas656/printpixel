@@ -7,7 +7,7 @@ interface Props {
 
 const { lang = 'en' } = Astro.props;
 const t = I18N[lang] || I18N.en;
-const canonicalUrl = lang === 'en' ? 'https://printpixel.app/' : `https://printpixel.app/${lang}/`;
+const canonicalUrl = lang === 'en' ? 'https://proofpixel.app/' : `https://proofpixel.app/${lang}/`;
 const homePath = lang === 'en' ? '/' : `/${lang}/`;
 ---
 <!DOCTYPE html>
@@ -18,11 +18,11 @@ const homePath = lang === 'en' ? '/' : `/${lang}/`;
 <title>{t.title}</title>
 <meta name="description" content={t.metaDesc}>
 <link rel="canonical" href={canonicalUrl} />
-<link rel="alternate" hreflang="en" href="https://printpixel.app/" />
-<link rel="alternate" hreflang="pt" href="https://printpixel.app/pt/" />
-<link rel="alternate" hreflang="es" href="https://printpixel.app/es/" />
-<link rel="alternate" hreflang="de" href="https://printpixel.app/de/" />
-<link rel="alternate" hreflang="x-default" href="https://printpixel.app/" />
+<link rel="alternate" hreflang="en" href="https://proofpixel.app/" />
+<link rel="alternate" hreflang="pt" href="https://proofpixel.app/pt/" />
+<link rel="alternate" hreflang="es" href="https://proofpixel.app/es/" />
+<link rel="alternate" hreflang="de" href="https://proofpixel.app/de/" />
+<link rel="alternate" hreflang="x-default" href="https://proofpixel.app/" />
 <meta name="theme-color" content="#F3F4F1" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0D1014" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23C2205B' stroke-width='2.5'/%3E%3Cpath d='M16 1v8M16 23v8M1 16h8M23 16h8' stroke='%23C2205B' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='16' r='3' fill='%23C2205B'/%3E%3C/svg%3E">
@@ -30,7 +30,7 @@ const homePath = lang === 'en' ? '/' : `/${lang}/`;
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "PrintPixel",
+  "name": "ProofPixel",
   "url": canonicalUrl,
   "inLanguage": lang,
   "description": t.metaDesc,
@@ -521,13 +521,13 @@ footer p{font-size:12.5px;color:var(--mut);max-width:52ch}
 
 <header class="site-head" id="siteHead">
   <div class="wrap">
-    <a class="brand" href={homePath} aria-label="PrintPixel home">
+    <a class="brand" href={homePath} aria-label="ProofPixel home">
       <svg width="22" height="22" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <circle cx="16" cy="16" r="9" stroke="var(--accent)" stroke-width="2.5"/>
         <path d="M16 1v8M16 23v8M1 16h8M23 16h8" stroke="var(--accent)" stroke-width="2.5"/>
         <circle cx="16" cy="16" r="3" fill="var(--accent)"/>
       </svg>
-      <span class="brand-name">PrintPixel <em>· DPI &amp; Print Analyzer</em></span>
+      <span class="brand-name">ProofPixel <em>· DPI &amp; Print Analyzer</em></span>
     </a>
     <nav class="head-nav" aria-label="Page sections">
       <a href="#reference">{t.navRef}</a><a href="#learn">{t.navFaq}</a>
@@ -682,7 +682,7 @@ footer p{font-size:12.5px;color:var(--mut);max-width:52ch}
     <div>
       <div class="f-brand">
         <svg width="17" height="17" viewBox="0 0 32 32" fill="none" aria-hidden="true"><circle cx="16" cy="16" r="9" stroke="var(--accent)" stroke-width="2.5"/><path d="M16 1v8M16 23v8M1 16h8M23 16h8" stroke="var(--accent)" stroke-width="2.5"/><circle cx="16" cy="16" r="3" fill="var(--accent)"/></svg>
-        PrintPixel
+        ProofPixel
         <span class="cmyk" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
       </div>
       <p style="margin-top:9px">{t.foot1}</p>
